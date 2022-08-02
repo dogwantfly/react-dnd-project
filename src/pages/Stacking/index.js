@@ -1,1 +1,1 @@
-export { default } from './Stacking'
+export { default } from './Stacking.jsx'

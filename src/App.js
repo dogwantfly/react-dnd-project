@@ -1,4 +1,5 @@
 import './App.css';
+import "./styles/output.css"
 import {
   BrowserRouter as Router,
   Routes,
@@ -13,13 +14,16 @@ import Header from './components/Header';
 
 function App() {
   return (
-    <Router>
-      <Header/>
-      <Routes>
-        <Route index element={<Dashboard />} />
-        <Route path="stacking" element={<Stacking />}/>
-        <Route path="marketplace" element={<Marketplace />}/>
-      </Routes>
+    <Router >
+      <div className="min-h-screen bg-gradient-radial-custom">
+        <div className="bg-[url('../images/background.png')] absolute inset-0 -z-0 opacity-30"></div>
+        <Header/>
+        <Routes>
+          <Route index element={<Dashboard />} />
+          <Route path="stacking" element={<Stacking />}/>
+          <Route path="marketplace" element={<Marketplace />}/>
+        </Routes>
+      </div>
     </Router>  
   );
 }

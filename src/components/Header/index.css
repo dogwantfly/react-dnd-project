@@ -1,0 +1,6 @@
+@media (min-width: 768px) {
+  .tab:not(.active):first-child::before,
+  .tab:(.active) ~ .tab:not(.active)::before {
+    transform: translateX(-100%);
+  }
+}

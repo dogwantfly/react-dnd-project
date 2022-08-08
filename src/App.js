@@ -16,7 +16,7 @@ function App() {
   return (
     <Router >
       <div className="min-h-screen bg-gradient-radial-custom -z-[1]">
-        <div className="bg-[url('../images/background.png')] absolute inset-0  opacity-30"></div>
+        <div className="bg-[url('../images/background.png')] absolute inset-0 opacity-30"></div>
         <Header/>
         <Routes>
           <Route index element={<Dashboard />} />

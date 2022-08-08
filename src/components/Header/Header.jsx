@@ -1,5 +1,6 @@
 import { NavLink, Link } from "react-router-dom";
 import './index.css';
+import logo from '../../images/Logo.svg';
 
 
 function Header({ item }) {
@@ -19,7 +20,7 @@ function Header({ item }) {
   return (
       <header className="container z-10 sticky top-0 flex justify-between mb-[60px] pt-9 items-center">
         <Link to="/" className="lg:hidden">
-          <img src="./Logo.svg" alt="logo" />
+          <img src={logo} alt="logo" />
         </Link>
         <button type="button" className="lg:hidden items-center justify-center p-2 rounded-lg text-white focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" onClick={openMenu}>
           <span className="sr-only">Open main menu</span>
@@ -32,7 +33,7 @@ function Header({ item }) {
             close
           </button>
           <Link to="/" className="hidden lg:block">
-            <img src="./Logo.svg" alt="logo" />
+            <img src={logo} alt="logo" />
           </Link>
           <div className="text-white font-bold flex lg:items-center lg:order-last flex-col lg:flex-row items-end p-4 lg:gap-x-6">
             <div className="bg-gradient-linear-custom material-icons rounded-full p-1 lg:px-2 lg:py-1 lg:text-3xl lg:leading-tight">

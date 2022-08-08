@@ -11,7 +11,7 @@ module.exports = {
         'dark': {
           DEFAULT: '#333333'
         },
-        
+        'dark-green-custom': 'rgba(15,86,86,0.9)'
       },
       container: {
         center: true,

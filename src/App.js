@@ -20,8 +20,6 @@ function App() {
         <Header/>
         <Routes>
           <Route index element={<Dashboard />} />
-          <Route path="stacking" element={<Stacking />}/>
-          <Route path="marketplace" element={<Marketplace />}/>
         </Routes>
       </div>
     </Router>  

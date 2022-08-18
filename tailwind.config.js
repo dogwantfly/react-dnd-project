@@ -9,7 +9,11 @@ module.exports = {
       },
       colors: {
         'dark': {
-          DEFAULT: '#333333'
+          DEFAULT: '#333333',
+          'light': '#333333B2'
+        },
+        'light': {
+          DEFAULT: '#F2F2F2'
         },
         'dark-green-custom': 'rgba(15,86,86,0.9)'
       },

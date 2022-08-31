@@ -41,7 +41,7 @@ function Header({ item }) {
             </div>
             <nav className="bg-dark rounded-none lg:rounded-2xl relative z-10">
               
-              <ul className="lg:flex    overflow-hidden p-1">
+              <ul className="lg:flex overflow-hidden p-1">
                 <li>
                   <NavLink exact="true" to="/" className={({ isActive }) =>
                   isActive ? activeClassName : "tab text-light p-4 font-bold before:content-[''] before:block before:absolute before:p-4 before:rounded-3xl before:-z-[1] before:inset-0 relative before:translate-x-full before:transition-all before:ease-in-out overflow-hidden text-xl"}>

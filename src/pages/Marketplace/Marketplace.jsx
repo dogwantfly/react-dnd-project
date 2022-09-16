@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 function Marketplace() {
   let navigate = useNavigate();
   useEffect(() => {
-    // setTimeout(() =>{
-    //   navigate("/");
-    // }, 2000)
+    setTimeout(() =>{
+      navigate("/");
+    }, 2000)
   }, [navigate])
   return (
     <div className="container flex md:pt-20 items-start justify-center relative z-[1] min-h-screen w-full">

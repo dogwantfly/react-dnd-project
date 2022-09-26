@@ -1,0 +1,26 @@
+.leaflet-tooltip-top {
+  font-size: 24px;
+}
+.leaflet-tooltip-top:before {
+  border-radius: 8px;
+  position: absolute;
+  pointer-events: none;
+  height: 20px;
+  width: 6px;
+  border: none;
+  background: #fff;
+  content: "";
+  margin-left: 0;
+  transform: translateX(-50%);
+  bottom: -8px;
+}
+:root {
+  --leaflet-tile-filter: brightness(0.6) invert(1) contrast(3)
+    hue-rotate(200deg) saturate(0.3) brightness(0.7);
+}
+
+@media (prefers-color-scheme: dark) {
+  .leaflet-tile {
+    filter: var(--leaflet-tile-filter, none);
+  }
+}

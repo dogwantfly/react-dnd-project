@@ -6,6 +6,7 @@ import { ItemTypes } from "../../Constants";
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import '../../index.css';
+import { debounce } from 'lodash';
 
 function Card({id, data, isDragging, editData, index}) {
   const [isOpen, setIsOpen] = useState(false);
@@ -112,8 +113,6 @@ const DraggableCard = ({ moveCard, ...props}) => {
         // but it's good here for the sake of performance
         // to avoid expensive index searches.
         item.index = hoverIndex
-        
-        
       },
     })
   )
@@ -130,16 +129,29 @@ function Stacking() {
   useEffect(() => {
     getData()
   },[])
-  
   const [companies, setCompanies] = useState([]);
+  const changeOrder = () => { 
+    console.log('changeOrder');
+    fetch( `https://hsin-yu-reactdndproject-stage-default-rtdb.firebaseio.com/data.json`, {
+      method: 'PUT',
+      body: JSON.stringify(Object.fromEntries(companies))
+    })
+    .then(response => {
+      console.log(response);
+      return response.json()
+    })
+    .catch(error => {console.log(error)})
+  }
+  const debounceChangeOrder = debounce(changeOrder, 3000)
   useEffect(() => {
     companies.forEach(((item, index) => {
       if (item[1].order !== index) {
         item[1].order = index
       }
     }))
-    changeOrder()
-  },[companies])
+    debounceChangeOrder()
+  
+  },[debounceChangeOrder, companies])
   const getData = async () => {
 
     const data = await fetch('https://hsin-yu-reactdndproject-stage-default-rtdb.firebaseio.com/data.json')
@@ -159,14 +171,7 @@ function Stacking() {
     
     getData();
   }
-  const changeOrder = async () => { 
-    await fetch( `https://hsin-yu-reactdndproject-stage-default-rtdb.firebaseio.com/data.json`, {
-      method: 'PUT',
-      body: JSON.stringify(Object.fromEntries(companies))
-    })
-    .then(response => response.json())
-    .catch(error => {console.log(error)})
-  }
+  
   
   const moveCard = useCallback((dragIndex, hoverIndex) => {
     
